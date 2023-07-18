@@ -1,0 +1,90 @@
+.contentPopUp{
+    position: fixed;
+    bottom: 50px;
+    padding: 5px;
+    right: -5000px;
+    text-align: center;
+    box-shadow: 0px 0px 5px 0px black;
+    background-color: #000000ab;
+    width: 400px;
+    border-start-start-radius: 10px;
+    border-end-start-radius: 10px;
+    height: fit-content;
+    z-index:101;
+    transition: .5s ease;
+}
+.contentPopUp.active{
+    right: 0px;
+}
+.contentPopUp.active:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 0px;
+    height: 0px;
+    background-color: transparent;
+}
+.boxPopUp{
+    display: inline-flex;
+    box-shadow: inset 0px 0px 5px 1px var(--first-color);
+    background-color: white;
+    border-start-start-radius: 10px;
+    border-end-start-radius: 10px;
+    width: 100%;
+    margin: auto;
+}
+.boxPopUp .leftPopUp{
+    width: 380px;
+    padding: 1%;
+    position: relative;
+    text-align: center;
+    margin: 2% auto;
+}
+.boxPopUp .leftPopUp h5{
+    margin:auto;
+    width:fit-content;
+    color:black;
+    border-bottom: 4px solid transparent;
+    border-image: linear-gradient(#fff, #fff), linear-gradient(120deg, #fade00 0%, #0ff 50%, #be00ff 100%);    
+    border-image-slice: 1;
+}
+.boxPopUp .rightPopUp{
+    width: 50px;
+    position: relative;
+    padding: 1%;
+}
+.boxPopUp .rightPopUp span{
+    position: absolute;
+    top: 10%;
+    right: 0;
+    left: 0;
+    font-size: 25px;
+    cursor: pointer;
+    color: gray;
+    transition: .35s ease-in-out;
+}
+.boxPopUp .rightPopUp span:hover{
+    color:black;
+}
+@media screen and (max-width:1400px){
+    .contentPopUp{
+        width: 320px;
+    }
+}
+@media screen and (max-width:1235px){
+    .contentPopUp{
+        width: 310px;
+        top: 520px;
+    }
+}
+@media screen and (max-width: 620px){
+    .contentPopUp{
+        top: 470px;
+    }
+    .contentPopUp .boxPopUp .leftPopUp h5{
+        font-size: 16px;
+    }
+    .contentPopUp .boxPopUp .rightPopUp span{
+        font-size: 24px;
+    }
+}
